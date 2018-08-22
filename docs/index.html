@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>mgn-scroll-effect.js</title>
+    <meta name="description" content="mgn-scroll-effect.jsは、スクロールを起点とした、要素のアニメーションを実装します。jQueryを必要ありません。ライブラリ側ではclassを付け外しするだけで、アニメーションはcssでtransition、transformを用いて操作します。">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style>
+		body { background: #FFF; margin: 0px; padding: 40px 20px; overflow: hidden; overflow: auto;}
+		h1, h2, h3 { margin: 0; padding: 0; }
+		footer { padding: 20px; background: #F7F7F7; }
+		footer p { font-size: 0.75em; }
+
+		.j-scroll-effect {
+			opacity: 0;
+			padding: 50px;
+			height: 1000px;
+			background: #ccc;
+			margin-bottom: 2px;
+		}
+		.j-scroll-effect:nth-of-type(1) { transform: translate(-50px,0); }
+		.j-scroll-effect:nth-of-type(2) { transform: translate(50px,0); }
+		.j-scroll-effect:nth-of-type(3) { transform: scale(1.2,1.2); }
+		.j-scroll-effect:nth-of-type(4) { transform: scale(0.8,0.8); }
+		.j-scroll-effect.j-scroll-effect_transition { transition: all 1s ease; }
+		.j-scroll-effect.j-scroll-effect_start {
+			opacity: 1;
+			transform: translate(0,0) scale(1,1);
+		}
+		.j-scroll-effect[data-effecttarget=".target"] {
+			opacity: 1;
+			transform: translate(0,0);
+			background: #666;
+		}
+		.j-scroll-effect .target {
+			opacity: 0;
+			transform: translate(-10px,0);
+			padding: 10px;
+			margin-bottom: 1px;
+			background: #FFF;
+		}
+		.j-scroll-effect .target:nth-of-type(1).j-scroll-effect_transition {
+			transition: all 1s ease 0.5s;
+		}
+		.j-scroll-effect .target:nth-of-type(2).j-scroll-effect_transition {
+			transition: all 1s ease 1s;
+		}
+		.j-scroll-effect .target:nth-of-type(3).j-scroll-effect_transition {
+			transition: all 1s ease 1.5s;
+		}
+		.j-scroll-effect .target:nth-of-type(4).j-scroll-effect_transition {
+			transition: all 1s ease 2s;
+		}
+		.j-scroll-effect_start .target {
+			opacity: 1; transform: translate(0,0);
+		}
+
+	</style>
+
+</head>
+<body>
+
+
+	<h1>mgn-scroll-effect</h1>
+	<p>mgn-scroll-effect.jsは、スクロールを起点とした、要素のアニメーションを実装します。<br>jQueryを必要ありません。<br>ライブラリ側ではclassを付け外しするだけで、アニメーションはcssでtransition、transformを用いて操作します。</p>
+	<p><a href="https://github.com/frontend-isobar-jp/mgn-scroll-effect">https://github.com/frontend-isobar-jp/mgn-scroll-effect</a></p>
+
+	<div class="j-scroll-effect">
+		<p>Target 01</p>
+	</div>
+
+	<div class="j-scroll-effect">
+		<p>Target 02</p>
+	</div>
+
+	<div class="j-scroll-effect">
+		<p>Target 03</p>
+	</div>
+
+	<div class="j-scroll-effect">
+		<p>Target 04</p>
+	</div>
+
+	<div id="target05" class="j-scroll-effect" data-effecttarget=".target">
+		<p class="target">Target 05-1</p>
+		<p class="target">Target 05-2</p>
+		<p class="target">Target 05-3</p>
+		<p class="target">Target 05-4</p>
+	</div>
+
+	<footer>
+		<p><a href="https://megane-template.com/" target="_blank">Megane Template</a></p>
+		<p>Copyrights Dentsu Isobar. Allrights reserved.</p>
+	</footer>
+
+	<script src="./bundle.js"></script>
+
+</body>
+</html>
