@@ -47,7 +47,7 @@ ___
 [https://frontend-isobar-jp.github.io/mgn-scroll-effect/](https://frontend-isobar-jp.github.io/mgn-scroll-effect/)
 
 When execute mgnScrollEffect with **".j-scroll-effect"**,  
-*".j-scroll-effect_transition"* is assigned before the event is ignited.  
+**".j-scroll-effect_transition"** is assigned before the event is ignited.  
 Please do setting for css transition here.
 
 **".j-scroll-effect_transition"** is deleted after **".j-scroll-effect_start"** assigned **transition** is completed.
